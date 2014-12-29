@@ -1,0 +1,91 @@
+/*Default Reset CSS*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+body { 
+	font-family: arial;
+	font-size: 14px;
+	color: black;
+}
+
+h1  {
+	font-size:30px;
+	font-weight:normal;
+}
+#header {
+	background-color: #499bd7;
+	color: white;
+	text-align: center;
+	height: 177px;
+	text-align:center;
+	font-size: 30px;
+	line-height:160px
+}
+#navigation {
+	background-color: #d6d6d6;
+	height: 60px;
+	line-height:50px;	
+}
+
+li {
+	display: inline;
+}
+ul {
+		
+	display: inline;
+	padding: 0;
+}
+#content {
+	margin: 29px 25px;
+}
+
+#footer {
+	background-color: #eeeeee;
+	height: 65px;
+	line-height:60px;
+}
+#banner_image {
+
+	float: left;
+	margin-right:12px;
+}
+.copyright  {
+	float: right;
+	font-size: 12px;
+}
+
+a {
+	text-decoration:none; 
+	color : black;
+}
+
+.container {
+	width: 940px;
+	margin:auto;
+}
+.list {
+	float:left;
+}
+
+a:hover { 
+    color: blue;
+}

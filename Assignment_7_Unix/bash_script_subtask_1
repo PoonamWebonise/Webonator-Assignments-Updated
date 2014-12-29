@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Script for 1 Subtask - A bash script to determine the following;
+# 		The hostname of the system you are on?
+#		The type and version of the operating system the machine machine is running? (Show both at the same time, with one command.)
+#		The full path to your home directory?
+#		Which other users are logged into the machine you are using?
+#		What groups you belong to?
+#		What files (excluding directories) are located in your home directory and all its subdirectories?
+
+echo "Date & Time: " >> assignment.log
+date >> assignment.log
+echo>>"\n" >> assignment.log
+
+echo "1.Host Name of the System is: " >> assignment.log
+hostname >> assignment.log
+echo>>"\n" >> assignment.log
+
+echo "2.Type & Version of the Operating System is: " >> assignment.log
+lsb_release -a >> assignment.log
+echo>>"\n" >> assignment.log
+
+
+echo "3.The home directory: " >> assignment.log
+echo ~ >> assignment.log
+echo>>"\n" >> assignment.log
+
+echo "4.The other users logged in machine are: " >> assignment.log
+who >> assignment.log
+echo>>"\n" >> assignment.log
+
+echo "5.The groups belong to are: " >> assignment.log
+groups >> assignment.log
+echo>>"\n" >> assignment.log
+
+echo "6.All files in directories & subdirectories are: " >> assignment.log
+ls -R $HOME|grep -v ^d >> assignment.log
+
+
+
+
+
+

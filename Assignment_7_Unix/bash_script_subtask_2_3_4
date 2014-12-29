@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#Script for 2 Subtask - A bash script to rename the all files with extension .txt inside your assignment directory and list them on console.
+#Script for 3 Subtask - Extend above bash script to rename the all files whose name starts with letter "x" inside your assignment directory and list them on console.
+#Script for 4 Subtask - After renaming the all files store the output of listing of files inside the directory to some assignment.log file with date and time inside the #log all re-naming of files happens.
+
+echo >> "\n" >> assignment.log
+echo >> "\n" >> assignment.log
+echo "Sub Task 2 Output: " >> assignment.log
+
+echo >> "\n" >> assignment.log
+echo "All files renamed with .txt extension" >> assignment.log
+
+echo >> "\n" >> assignment.log
+echo "Rename of all .txt files" $(rename -v 's/\.txt/-rename.txt/' *.txt) >>assignment.log
+
+echo >> "\n" >> assignment.log
+echo >> "\n" >> assignment.log
+echo "Rename all files Starting with letter x In Directory=" $(rename -v 's/^(x.{2})/$1-renamed-/' *.*) >> assignment.log
+

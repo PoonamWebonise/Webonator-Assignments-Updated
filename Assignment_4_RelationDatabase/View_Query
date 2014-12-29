@@ -1,0 +1,8 @@
+2. Create a view for candidate data with his score.
+
+CREATE OR REPLACE VIEW assess_view AS 
+select users.id,users.name,users.email,sum(given_assessments.score_count)as score_count
+from users right join given_assessments on given_assessments.user_id=users.id
+group by users.id;
+
+SELECT * from assess_view;

@@ -1,0 +1,32 @@
+INSTALLATION STEPS-
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+
+echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+
+sudo apt-get update
+
+sudo apt-get install -y mongodb-org
+
+ mongo
+MongoDB shell version: 2.6.5
+connecting to: test
+
+ use db
+switched to db db
+
+> show dbs
+admin  (empty)
+local  0.078GB
+
+> use db
+switched to db db
+
+> db.createCollection("users",{});
+{ "ok" : 1 }
+
+
+
+
+
+

@@ -1,0 +1,159 @@
+
+*Checking all the database-
+
+> db.student.find().pretty();
+{
+	"_id" : ObjectId("54699d8c3068fd0d0131adcf"),
+	"userid" : "1",
+	"name" : "user1",
+	"email" : "user1@gmail.com",
+	"password" : "abc123",
+	"assess_map_id" : "1",
+	"user_answer" : "1",
+	"score_count" : "1"
+}
+{
+	"_id" : ObjectId("54699d9b3068fd0d0131add0"),
+	"userid" : "1",
+	"name" : "user1",
+	"email" : "user1@gmail.com",
+	"password" : "abc123",
+	"assess_map_id" : "2",
+	"user_answer" : "1",
+	"score_count" : "1"
+}
+{
+	"_id" : ObjectId("54699da83068fd0d0131add1"),
+	"userid" : "1",
+	"name" : "user1",
+	"email" : "user1@gmail.com",
+	"password" : "abc123",
+	"assess_map_id" : "4",
+	"user_answer" : "0",
+	"score_count" : "0"
+}
+{
+	"_id" : ObjectId("54699db23068fd0d0131add2"),
+	"userid" : "1",
+	"name" : "user1",
+	"email" : "user1@gmail.com",
+	"password" : "abc123",
+	"assess_map_id" : "5",
+	"user_answer" : "0",
+	"score_count" : "0"
+}
+{
+	"_id" : ObjectId("54699dbf3068fd0d0131add3"),
+	"userid" : "2",
+	"name" : "user2",
+	"email" : "user2@gmail.com",
+	"password" : "xyz123",
+	"assess_map_id" : "3",
+	"user_answer" : "1",
+	"score_count" : "1"
+}
+{
+	"_id" : ObjectId("54699dc93068fd0d0131add4"),
+	"userid" : "2",
+	"name" : "user2",
+	"email" : "user2@gmail.com",
+	"password" : "xyz123",
+	"assess_map_id" : "8",
+	"user_answer" : "0",
+	"score_count" : "0"
+}
+{
+	"_id" : ObjectId("54699de83068fd0d0131add5"),
+	"userid" : "2",
+	"name" : "user2",
+	"email" : "user2@gmail.com",
+	"password" : "xyz123",
+	"assess_map_id" : "9",
+	"user_answer" : "0",
+	"score_count" : "0"
+}
+
+> db.assessment_mapping.find().pretty();
+{
+	"_id" : ObjectId("54699ee63068fd0d0131add6"),
+	"id" : "1",
+	"assessment" : {
+		"aid" : "1",
+		"questions" : {
+			"qid" : "1",
+			"content" : "Which of the following is not a valid variable name declaration?"
+		},
+		"options" : {
+			"oid" : "3",
+			"ocontent" : "int a_3;"
+		},
+		"answer_flag" : "1"
+	}
+}
+{
+	"_id" : ObjectId("54699ef43068fd0d0131add7"),
+	"id" : "4",
+	"assessment" : {
+		"aid" : "1",
+		"questions" : {
+			"qid" : "1",
+			"content" : "Which of the following is not a valid variable name declaration?"
+		},
+		"options" : {
+			"oid" : "2",
+			"ocontent" : "int _a3;"
+		},
+		"answer_flag" : "0"
+	}
+}
+{
+	"_id" : ObjectId("54699f073068fd0d0131add8"),
+	"id" : "5",
+	"assessment" : {
+		"aid" : "1",
+		"questions" : {
+			"qid" : "1",
+			"content" : "Which of the following is not a valid variable name declaration?"
+		},
+		"options" : {
+			"oid" : "4",
+			"ocontent" : "int _a3;"
+		},
+		"answer_flag" : "0"
+	}
+}
+{
+	"_id" : ObjectId("54699f193068fd0d0131add9"),
+	"id" : "2",
+	"assessment" : {
+		"aid" : "1",
+		"questions" : {
+			"qid" : "1",
+			"content" : "All keywords in C are in: "
+		},
+		"options" : {
+			"oid" : "4",
+			"ocontent" : "LowerCase Letters"
+		},
+		"answer_flag" : "1"
+	}
+}
+{
+	"_id" : ObjectId("54699f1f3068fd0d0131adda"),
+	"id" : "6",
+	"assessment" : {
+		"aid" : "1",
+		"questions" : {
+			"qid" : "2",
+			"content" : "All keywords in C are in"
+		},
+		"options" : {
+			"oid" : "1",
+			"ocontent" : "CamelCase letters"
+		},
+		"answer_flag" : "0"
+	}
+}
+> 
+
+

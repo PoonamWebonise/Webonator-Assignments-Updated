@@ -1,0 +1,68 @@
+QUERY -
+Using this query we get all the questions a specific student appeared for the exam
+
+For Eg here we got for user1
+ 
+ db.student.find({"userid":"1"}).pretty();
+{
+	"_id" : ObjectId("54699d8c3068fd0d0131adcf"),
+	"userid" : "1",
+	"name" : "user1",
+	"email" : "user1@gmail.com",
+	"password" : "abc123",
+	"assess_map_id" : "1",
+	"user_answer" : "1",
+	"score_count" : "1"
+}
+{
+	"_id" : ObjectId("54699d9b3068fd0d0131add0"),
+	"userid" : "1",
+	"name" : "user1",
+	"email" : "user1@gmail.com",
+	"password" : "abc123",
+	"assess_map_id" : "2",
+	"user_answer" : "1",
+	"score_count" : "1"
+}
+{
+	"_id" : ObjectId("54699da83068fd0d0131add1"),
+	"userid" : "1",
+	"name" : "user1",
+	"email" : "user1@gmail.com",
+	"password" : "abc123",
+	"assess_map_id" : "4",
+	"user_answer" : "0",
+	"score_count" : "0"
+}
+{
+	"_id" : ObjectId("54699db23068fd0d0131add2"),
+	"userid" : "1",
+	"name" : "user1",
+	"email" : "user1@gmail.com",
+	"password" : "abc123",
+	"assess_map_id" : "5",
+	"user_answer" : "0",
+	"score_count" : "0"
+}
+
+QUERY-
+From the above query we can find the question map id and find out the correct question and its answer & check it with student's answer
+
+db.assessment_mapping.find({"id":"2"}).pretty();
+{
+	"_id" : ObjectId("54699f193068fd0d0131add9"),
+	"id" : "2",
+	"assessment" : {
+		"aid" : "1",
+		"questions" : {
+			"qid" : "1",
+			"content" : "All keywords in C are in: "
+		},
+		"options" : {
+			"oid" : "4",
+			"ocontent" : "LowerCase Letters"
+		},
+		"answer_flag" : "1"
+	}
+}
+

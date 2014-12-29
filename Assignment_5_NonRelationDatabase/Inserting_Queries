@@ -1,0 +1,61 @@
+
+******************************
+[QUERIES WRITTEN FOR INSERTING]
+
+db.student.insert({"userid":"1","name":"user1","email":"user1@gmail.com","password":"abc123","assess_map_id":"1","user_answer":"1","score_count":"1"})
+db.student.insert({"userid":"1","name":"user1","email":"user1@gmail.com","password":"abc123","assess_map_id":"2","user_answer":"1","score_count":"1"})
+db.student.insert({"userid":"1","name":"user1","email":"user1@gmail.com","password":"abc123","assess_map_id":"4","user_answer":"0","score_count":"0"})
+db.student.insert({"userid":"1","name":"user1","email":"user1@gmail.com","password":"abc123","assess_map_id":"5","user_answer":"0","score_count":"0"})
+
+db.student.insert({"userid":"2","name":"user2","email":"user2@gmail.com","password":"xyz123","assess_map_id":"3","user_answer":"1","score_count":"1"})
+db.student.insert({"userid":"2","name":"user2","email":"user2@gmail.com","password":"xyz123","assess_map_id":"8","user_answer":"0","score_count":"0"})
+db.student.insert({"userid":"2","name":"user2","email":"user2@gmail.com","password":"xyz123","assess_map_id":"9","user_answer":"0","score_count":"0"})
+
+db.assessment_mapping.insert({"id":"1","assessment":{"aid":"1","questions":{"qid":"1","content":"Which of the following is not a valid variable name declaration?"},"options":{"oid":"3","ocontent":"int a_3;"},"answer_flag":"1"}})
+
+db.assessment_mapping.insert({"id":"4","assessment":{"aid":"1","questions":{"qid":"1","content":"Which of the following is not a valid variable name declaration?"},"options":{"oid":"2","ocontent":"int _a3;"},"answer_flag":"0"}})
+
+db.assessment_mapping.insert({"id":"5","assessment":{"aid":"1","questions":{"qid":"1","content":"Which of the following is not a valid variable name declaration?"},"options":{"oid":"4","ocontent":"int _a3;"},"answer_flag":"0"}})
+
+
+db.assessment_mapping.insert({"id":"2","assessment":{"aid":"1","questions":{"qid":"1","content":"All keywords in C are in: "},"options":{"oid":"4","ocontent":"LowerCase Letters"},"answer_flag":"1"}})
+
+db.assessment_mapping.insert({"id":"6","assessment":{"aid":"1","questions":{"qid":"2","content":"All keywords in C are in"},"options":{"oid":"1","ocontent":"CamelCase letters"},"answer_flag":"0"}})
+
+**************************
+
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$
+[QUERIES FIRED ON MONGODB]
+
+> db.student.insert({"userid":"1","name":"user1","email":"user1@gmail.com","password":"abc123","assess_map_id":"1","user_answer":"1","score_count":"1"})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({"userid":"1","name":"user1","email":"user1@gmail.com","password":"abc123","assess_map_id":"2","user_answer":"1","score_count":"1"})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({"userid":"1","name":"user1","email":"user1@gmail.com","password":"abc123","assess_map_id":"4","user_answer":"0","score_count":"0"})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({"userid":"1","name":"user1","email":"user1@gmail.com","password":"abc123","assess_map_id":"5","user_answer":"0","score_count":"0"})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({"userid":"2","name":"user2","email":"user2@gmail.com","password":"xyz123","assess_map_id":"3","user_answer":"1","score_count":"1"})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({"userid":"2","name":"user2","email":"user2@gmail.com","password":"xyz123","assess_map_id":"8","user_answer":"0","score_count":"0"})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({"userid":"2","name":"user2","email":"user2@gmail.com","password":"xyz123","assess_map_id":"9","user_answer":"0","score_count":"0"})
+WriteResult({ "nInserted" : 1 })
+
+
+> db.assessment_mapping.insert({"id"="1","assessment":{"aid":"1","questions":{"qid"="1","content":"Which of the following is not a valid variable name declaration?"},"options":{"oid":"3","ocontent":"int a_3;"},"answer_flag":"1"}})
+2014-11-17T12:37:30.290+0530 SyntaxError: Unexpected token =
+> db.assessment_mapping.insert({"id":"1","assessment":{"aid":"1","questions":{"qid":"1","content":"Which of the following is not a valid variable name declaration?"},"options":{"oid":"3","ocontent":"int a_3;"},"answer_flag":"1"}})
+WriteResult({ "nInserted" : 1 })
+> db.assessment_mapping.insert({"id":"4","assessment":{"aid":"1","questions":{"qid":"1","content":"Which of the following is not a valid variable name declaration?"},"options":{"oid":"2","ocontent":"int _a3;"},"answer_flag":"0"}})
+WriteResult({ "nInserted" : 1 })
+> db.assessment_mapping.insert({"id":"5","assessment":{"aid":"1","questions":{"qid":"1","content":"Which of the following is not a valid variable name declaration?"},"options":{"oid":"4","ocontent":"int _a3;"},"answer_flag":"0"}})
+WriteResult({ "nInserted" : 1 })
+> db.assessment_mapping.insert({"id":"2","assessment":{"aid":"1","questions":{"qid":"1","content":"All keywords in C are in: "},"options":{"oid":"4","ocontent":"LowerCase Letters"},"answer_flag":"1"}})
+WriteResult({ "nInserted" : 1 })
+> db.assessment_mapping.insert({"id":"6","assessment":{"aid":"1","questions":{"qid":"2","content":"All keywords in C are in"},"options":{"oid":"1","ocontent":"CamelCase letters"},"answer_flag":"0"}})
+WriteResult({ "nInserted" : 1 })
+
+$$$$$$$$$$$$$$$$$$$$$$$$$

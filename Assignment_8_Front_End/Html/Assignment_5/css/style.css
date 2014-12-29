@@ -1,0 +1,232 @@
+/*Default Reset CSS*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.clearFix, .socialIcons li.clearFix , .navigationList li.clearFix{
+	clear: both;
+	float:none;
+	width: 0;
+	height: 0;
+	border: 0;
+	padding: 0;
+	margin:0;
+}
+
+.wrapper {
+	width:940px;
+	margin:auto;
+	position: relative;
+}
+
+body{
+	background-image: url("../images/content_background.png");
+}
+#navigation {
+	background-image:url("../images/header_background.png");
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	border-bottom: 1px solid #fff;
+	z-index: 1;
+	box-shadow: 0px 1px 3px 3px #c8d2d7;
+	position: relative;
+	text-shadow:1px 1px 0px #fff;
+}
+
+#navigation .wrapper {
+	padding: 20px 0px 0px 0px;
+}
+.logo {
+	background-image:url("../images/logo.png");
+	height:140px;
+	width: 236px;
+	display: block;
+	position: absolute;
+	top :0px;
+	left:0px;
+	z-index: 2;
+}
+
+.twitterIcon {
+	background:url("../images/twitter_icon.png");
+}
+
+.facebookIcon {
+	background:url("../images/facebook_icon.png");
+}
+
+.socialIcons {
+	float: right;
+}
+
+.socialIcons li{
+	float: left;
+	margin-left: 9px;
+	list-style-type: none;
+}
+
+.socialIcons li a{
+	display: block;
+	height: 26px;
+	width: 25px;
+}
+
+.socialIcons li .twitterIcon:hover{
+	background:url("../images/twitter_hover.png");
+}
+
+.socialIcons li .facebookIcon:hover{
+	background:url("../images/facebook_hover.png");
+}
+.navigationList {
+	float: right;
+	margin: 20px 0px 0px 0px;
+}
+
+.navigationList li{
+	float: left;
+	list-style-type: none;
+	margin-left: 12px;
+	padding:20px 0px 0px 12px;
+	background: no-repeat url("../images/navigation_right_seperator.png");
+	height: 25px;
+}
+
+.navigationList li:first-child {
+	background: none;
+}
+
+#navigation .navigationList a:hover{
+	color:black;
+}
+
+#navigation a{
+	text-decoration: none;
+	color:#209cd5;
+}
+
+#navigation .navigationList li a.active{
+	color:#005587;
+}
+#banner {
+	background-image: url("../images/content_background.png");
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	z-index: -1;
+	position: relative;
+}
+
+#banner .wrapper{
+	box-shadow: 0px 1px 10px 3px #c8d2d7;
+}
+.bannerContent {
+	background: url("../images/best_technology_image.png") center top;
+	height: 323px;
+}
+
+.bannerText{
+	padding: 77px 0px 0px 40px;
+	width: 444px;
+}
+
+.bannerText h1{
+	font-size: 26px;
+	font-weight: bold;
+	color:#209cd5;
+}
+
+.bannerText span {
+	font-size: 13px;
+}
+
+#content .wrapper {
+	background-color: #fff;
+	box-shadow: 0px 1px 10px 5px #c8d2d7;
+}
+.contentData {
+	background-color: #fff;
+	padding: 10px 10px 75px 0px;
+}
+
+.contentData ul {
+	float: left;
+}
+
+.contentData li {
+	float: left;
+	margin-left: 10px;
+	width: 300px;
+	list-style-type: none;
+}
+
+.contentText {
+	padding: 30px 20px 0px 22px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	color:gray;
+	
+}
+
+.contentImage {
+	position: relative;
+}
+
+.contentImage h2{
+	position: absolute;
+	bottom:18px;
+	left:19px;
+	font-size: 24px;
+	font-weight: bold;
+	width: 210px;
+	color: #fff;
+	text-shadow:1px 1px 0px #000;
+}
+.footer {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	padding: 15px 30px 105px 30px;
+	border-top: 1px solid #cedfe7;
+	margin-bottom: 175px;
+}
+
+.footerContents ul{
+	float: left;
+}
+
+.footerContents li{
+	float: left;
+	list-style-type: none;
+	margin-left: 19px;
+}
+
+.footerContents span{
+	float: right;
+	display: block;
+	margin: 0px 30px 0px; 0px;
+}
+
+.footerContents a{
+	text-decoration: none;
+	color: #000;
+}
+
+.footerContents li a:hover{
+	color: #005587;
+}

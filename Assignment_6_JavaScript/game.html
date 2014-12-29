@@ -1,0 +1,134 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<style>
+p:hover {
+background-color: grey;
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+function isColorSelected() {
+if (document.getElementById("colorValue0").checked == false
+&& document.getElementById("colorValue1").checked == false
+&& document.getElementById("colorValue2").checked == false) {
+alert("Please select atleast one color");
+return false;
+}
+return true;
+}
+
+function selectedColorMeth() {
+var j;
+var colorElements = document.getElementsByName("colorValue");
+for (j = 0; j < colorElements.length; j++) {
+if (document.getElementById("colorValue" + j).checked == true) {
+selectedColor = colorElements[j].value;
+}
+}
+return selectedColor;
+}
+
+function colorIt(buttonId) {
+var j;
+var isColor = isColorSelected();
+var OColor = document.getElementById(buttonId).style.backgroundColor;
+if (isColor == true && OColor == "grey") {
+var colorChoice = selectedColorMeth();
+buttonColor = document.getElementById(buttonId);
+buttonColor.style.backgroundColor = colorChoice;
+} else {
+alert("Already Color " + OColor + " applied");
+}
+}
+
+function changeBorder() {
+alert("Change Border");
+}
+
+function displayDigits() {
+var i, drawTable;
+var cnt = 1;
+drawTable = "<table width=30% border=2> <tr>"
+for (i = 1; i <= 9; i++) {
+if (i > 3 * cnt) {
+drawTable += "<tr>";
+drawTable += "<td style=width:20%; onmouseover=ChangeBackgroundColor(this) onmouseout=RestoreBackgroundColor(this)><input id="
++ i
++ " style=background-color:grey;width:100%  type=button value="
++ i + " onClick=colorIt(this.id);></td>";
+
+cnt++;
+} else {
+drawTable += "<td style=width:20% onmouseover=ChangeBackgroundColor(this) onmouseout=RestoreBackgroundColor(this)><input id="
++ i
++ " style=background-color:grey;width:100%  type=button value="
++ i + " onClick=colorIt(this.id);></td>";
+}
+}
+drawTable += "</tr></table>"
+document.getElementById("digitRow").innerHTML = drawTable;
+}
+
+function ChangeBackgroundColor(row) {
+row.style.borderStyle = "dotted";
+}
+function RestoreBackgroundColor(row) {
+row.style.borderStyle = "double";
+}
+
+function randomDigit() {
+var colorValue = isColorSelected();
+var randomElement;
+if (colorValue == true) {
+var x = Math.floor((Math.random() * 10) + 1);
+randomElement = document.getElementById(x);
+var OColor = document.getElementById(x).style.backgroundColor;
+if (OColor == "grey") {
+choiceColor = selectedColorMeth();
+randomNo = document.getElementById(x);
+randomNo.style.backgroundColor = choiceColor;
+//alert("Random Function"+x);
+}
+}
+
+}
+
+function reloadAll() {
+			displayDigits();
+			document.getElementById("colorValue0").checked=false;
+			document.getElementById("colorValue1").checked=false;
+			document.getElementById("colorValue2").checked=false;
+		}
+		
+</script>
+<H3 align="center">Lets Play A Game</H3>
+<div align="center" id=color>
+<input id="colorValue0" name="colorValue" type="radio" value="RED">
+RED <input id="colorValue1" name="colorValue" type="radio"
+value="GREEN"> GREEN <input id="colorValue2"
+name="colorValue" type="radio" value="BLUE"> BLUE
+</div>
+<br>
+<br>
+<div align ="center" id="digitRow">
+<script type="text/javascript">
+displayDigits();
+</script>
+
+</div>
+<br>
+<br>
+<div align="center" id="footer">
+<input style="width: 10%" type="button" Value="Reset"
+onClick=reloadAll()> <input
+style="width: 10%" type="button" value="Random"
+onClick="randomDigit()">
+
+</div>
+
+</body>
+</html>
+

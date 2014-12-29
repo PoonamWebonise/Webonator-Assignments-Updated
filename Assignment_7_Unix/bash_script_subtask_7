@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Script for 7 Subtask - Copy the public_html folder inside the public_html and then rename it.
+
+cp -a public_html public_html
+cd public_html
+echo "Rename of public_html folder" $(rename -v 's/public_html/-rename_public_html/' public_html)

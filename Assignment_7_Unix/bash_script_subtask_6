@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Script for 6 Subtask - Move first 4 files from assignment folder to public_html folder.
+
+echo "Copying first 4 files in public_html folder"
+find . -maxdepth 1 -type f |head -4|xargs mv -t public_html

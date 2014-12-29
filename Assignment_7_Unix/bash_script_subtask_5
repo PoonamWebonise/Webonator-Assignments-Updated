@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Script for 5 Subtask - After renaming and log them in assignment.log , Create a folder named "public_html" in your 
+# assignment directory. Place a 'readme.txt' file in #there. (It should have the path: ~/public_html/readme.txt.) 
+# Set up file permissions to 777 so that you can see the directory listing.  
+
+
+mkdir public_html
+cd public_html
+touch readme.txt
+chmod 777 readme.txt

@@ -1,0 +1,89 @@
+<html>
+<title>Graph</title>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type='text/javascript'>
+
+function checkValues(){
+	if (document.getElementById('equation').value=="" 
+&& document.getElementById('step').value=="" 
+&& document.getElementById('inbound').value=="" 
+&& document.getElementById('outbound').value=="" ){
+alert('Insert the values');
+return false;}	
+	var step_value=document.getElementById('step').value;
+	var inbound_value=document.getElementById('inbound').value;	
+	var outbound_value=document.getElementById('outbound').value;
+	var equation_split1=document.getElementById('equation').value;
+	var equation_split2=equation_split1.split("=");
+	var equation_split3=equation_split2[1].split("+");
+	var equation_split4=equation_split3[0].split("x");
+	var equation_split5=equation_split3[1];
+	var x=parseInt(inbound_value);
+	var m=parseInt(equation_split4);
+	var c=parseInt(equation_split5);
+	var step=parseInt(step_value);
+	var outbound=parseInt(outbound_value);
+	contex.translate(400,250);
+	contex.rotate(80);
+	var y=(m*x)+c;
+	var co_ordinates_1=[x,y];
+	var txt=x+","+y;
+	contex.fillText(txt,x,y);
+	x=x+step;
+	var y=(m*x)+c;
+	var co_ordinates_2=[x,y];
+	var txt=x+","+y;
+	contex.fillText(txt,x,y);
+	x=x+step;
+	contex.moveTo(co_ordinates_1[0],co_ordinates_1[1]);
+	contex.lineTo(co_ordinates_2[0],co_ordinates_2[1]);
+	contex.stroke();
+	while(x<=outbound)
+	{	
+		
+		var y=(m*x)+c;
+		var co_ordinates_1=[x,y];
+		var txt=x+","+y;
+		contex.fillText(txt,x,y);
+		x=x+step;
+		var y=(m*x)+c;
+		contex.lineTo(co_ordinates_1[0],co_ordinates_1[1]);
+		contex.stroke();
+		var co_ordinates_2=[x,y];
+		var txt=x+","+y;
+		contex.fillText(txt,x,y);
+		x=x+step;
+		contex.moveTo(co_ordinates_1[0],co_ordinates_1[1]);
+		contex.lineTo(co_ordinates_2[0],co_ordinates_2[1]);
+		contex.stroke();
+		contex.moveTo(co_ordinates_2[0],co_ordinates_2[1]);
+	}
+}
+
+</script>
+</head>
+<body>
+<div id="text">
+Equation<input type="text" name="equation" id="equation"><br><br>
+<label>eg: y=mx+c (y=3x+2)</label><br><br>
+Step<input type="text" name="step" id="step"><br><br>
+Inbound<input type="text" name="inbound" id="inbound"><br><br>
+Outbound<input type="text" name="outbound" id="outbound"><br><br>
+<input type="button" name="draw" value="Draw" onclick="checkValues()">
+</div>
+<div id="canvas">
+<canvas id="myCanvas" width="800" height="500" ></canvas>
+<script type='text/javascript'>
+	var canvas = document.getElementById("myCanvas");
+	var contex = canvas.getContext("2d");
+        contex.beginPath();
+	contex.moveTo(400,0);
+	contex.lineTo(400,800);
+	contex.moveTo(0,250);
+	contex.lineTo(800,250);
+	contex.stroke();
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+1 trial-
+
+CREATE PROCEDURE proc(IN userid int,INOUT mapid int,INOUT assid int,INOUT res int)
+BEGIN 
+
+select assessment_mapping.id INTO mapid from assessment_mapping where assessment_mapping.id IN
+(select given_assessments.assess_map_id from given_assessments
+where ga.user_id=1);
+
+select assessment_mapping.id INTO assid from assessment_mapping
+where answer_flag=1;
+
+select assessment_mapping.id INTO res from assessment_mapping
+where mapid=assid;
+
+select users.id,
+users.name
+questions.id,
+questions.content,
+options.id,
+options.content,
+from users,questions,options, assessment_mapping
+where assessment_mapping.id=res;
+END
+
+
+
+2 trial-
+
+CREATE PROCEDURE assesst(OUT mapid int)
+BEGIN
+CREATE OR REPLACE VIEW trial1 as
+select given_assessments.user_id,
+given_assessments.assess_map_id,
+assessment_mapping.question_id,
+assessment_mapping.option_id,
+assessment_mapping.assessment_id,
+assessment_mapping.answer_flag,
+assessment_mapping.id
+from given_assessments left join assessment_mapping on given_assessments.assess_map_id=assessment_mapping.id;
+
+select assessment_mapping.id 
+into mapid 
+from given_assessments, assessment_mapping
+where assessment_mapping.answer_flag=1;
+
+END
+
+

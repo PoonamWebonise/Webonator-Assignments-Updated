@@ -1,0 +1,25 @@
+declare @userid int;
+set @userid:=1;
+
+declare @mapid int;
+declare @assid int;
+declare @res int;
+
+select assessment_mapping.id INTO mapid from assessment_mapping where assessment_mapping.id IN
+(select given_assessments.assess_map_id from given_assessments
+where ga.user_id=1);
+
+select assessment_mapping.id INTO assid from assessment_mapping
+where answer_flag=1;
+
+select assessment_mapping.id INTO res from assessment_mapping
+where mapid=assid;
+
+select users.id,
+users.name
+questions.id,
+questions.content,
+options.id,
+options.content,
+from users,questions,options, assessment_mapping
+where assessment_mapping.id=res;

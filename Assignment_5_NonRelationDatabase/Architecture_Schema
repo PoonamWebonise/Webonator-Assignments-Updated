@@ -1,0 +1,31 @@
+users = {
+	 id:int
+	 name:varchar
+	 email:varchar
+	 password:varchar
+	 is_admin:boolean
+	 assess_map_id:int(refrence value from assessment_mapping)
+	 assessment_id_int(refrence value from assessments)
+	 user_answer:boolean(storing the user given answer)
+	 score_count:int
+	}
+
+assessment_mapping = {
+			
+			id:int
+			assessments:
+			{
+			 id:int
+			 questions:
+				 {
+					id:int
+					content:varchar
+				 }
+			 options:
+				 {
+					id:int
+					content:varchar
+				 }
+			 answer:boolean(storing the correct answer)
+		      }
+		}

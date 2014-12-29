@@ -1,0 +1,85 @@
+<html>
+<title>Graph</title>
+<head>
+<script type='text/javascript'>
+
+function checkValues(){
+	if (document.getElementById('equation').value=="" 
+&& document.getElementById('step').value=="" 
+&& document.getElementById('inbound').value=="" 
+&& document.getElementById('outbound').value=="" ){
+alert('insert the values');
+return false;}	
+	var st=document.getElementById('step').value;
+	var inp=document.getElementById('inbound').value;	
+	var ot=document.getElementById('outbound').value;
+	var eq=document.getElementById('equation').value;
+	var equ1=eq.split("=");
+	var equ2=equ1[1].split("+");
+	var equ3=equ2[0].split("x");
+	var equ4=equ2[1];
+	var x=parseInt(inp);
+	var m=parseInt(equ3);
+	var c=parseInt(equ4);
+	var step=parseInt(st);
+	var out=parseInt(ot);
+	ctx.translate(400,200);
+	ctx.rotate(180);
+	var y=(m*x)+c;
+	var arr1=[x,y];
+	alert(arr1);
+	x=x+step;
+	var y=(m*x)+c;
+	var arr2=[x,y];
+	alert(arr2);
+	x=x+step;
+	ctx.moveTo(arr1[0],arr1[1]);
+	ctx.lineTo(arr2[0],arr2[1]);
+	ctx.stroke();
+	while(x<=out)
+	{	
+		
+		var y=(m*x)+c;
+		var arr1=[x,y];
+		alert(arr1);
+		x=x+step;
+		var y=(m*x)+c;
+		ctx.lineTo(arr1[0],arr1[1]);
+		ctx.stroke();
+		var arr2=[x,y];
+		alert(arr2);
+		x=x+step;
+		ctx.moveTo(arr1[0],arr1[1]);
+		ctx.lineTo(arr2[0],arr2[1]);
+		ctx.stroke();
+		ctx.moveTo(arr2[0],arr2[1]);
+
+	}
+}
+
+</script>
+</head>
+<body>
+Equation<input type="text" name="equation" id="equation"><br><br>
+		<label>eg: y=mx+c (y=3x+2)</label><br><br>
+Step<input type="text" name="step" id="step"><br><br>
+Inbound<input type="text" name="inbound" id="inbound"><br><br>
+Outbound<input type="text" name="outbound" id="outbound"><br><br>
+<input type="button" name="draw" value="Draw" onclick="checkValues()">
+<div align="center">
+<canvas id="myCanvas" width="800" height="500" style="border:1px solid #d3d3d3;"></canvas>
+<script type='text/javascript'>
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+        ctx.beginPath();
+	ctx.moveTo(400,0);
+	ctx.lineTo(400,800);
+	ctx.moveTo(0,250);
+	ctx.lineTo(800,250);
+	ctx.stroke();
+</script>
+
+</div>
+
+</body>
+</html>
