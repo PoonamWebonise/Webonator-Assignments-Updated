@@ -1,0 +1,5 @@
+#surefire
+#Mon Jan 19 14:20:31 IST 2015
+user.dir=/media/webonise/Data_Drive/Hibernate_Workspace/SpringHibernateExample
+localRepository=/home/webonise/.m2/repository
+basedir=/media/webonise/Data_Drive/Hibernate_Workspace/SpringHibernateExample
